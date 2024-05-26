@@ -15,5 +15,9 @@ Implementations carried out in experiments conducted in this research indicate t
 ## Results
 The system achieved an accuracy of 97.20% on the test dataset. Detailed results and analysis are provided in the report.
 
+## Project History
+This project was originally completed in 2011. The commit history has been adjusted to reflect the original dates of the work.
+
+
 ## How to Use
 1. Go to Src folder and run 'Main_1.m'
