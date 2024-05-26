@@ -1,0 +1,40 @@
+function [Time]=RunGray(loadflag)
+global TrainSetSize; % the percent of train set
+global SampleNumber; %total number of samples
+global PerSamNumber; % number of sample per an object
+global TestSample; %loaded tesy set
+global TrainSample; % loaded train set
+global showflag;  % for show plots
+global PerSamNumbertotal;
+global GrayTrFileFlag;
+global GrayTrFileName;
+global GrayTsFileFlag;
+global GrayTsFileName;
+%% -----
+  %train
+    type='g';
+    fprintf('\n Create Featur vector...\n');
+     
+    [FeatureVecTr KeyNumTr]=CreateHSVFV(type,TrainSample,showflag);
+time=toc;
+%     save(GrayTrFileName,'FeatureVecTr','KeyNumTr');  
+    GrayTrFileFlag=1;
+    %Test
+    tic;
+    [FeatureVecTs KeyNumTs]=CreateHSVFV(type,TestSample,showflag);
+%         time=toc;
+%     save(GrayTsFileName,'FeatureVecTs','KeyNumTs');
+    GrayTsFileFlag=1;
+
+%   fprintf('\n Recognizing...\n');
+% %     tic;
+%     [Corr Err SumMatch]=Recognition(FeatureVecTr,FeatureVecTs);
+% %     time=toc;
+% 
+%     % fprintf('\n *****************************\n');
+%     Corrtmp=(Corr*100)/((SampleNumber)*(PerSamNumbertotal-PerSamNumber));
+%     KeyNum=[KeyNumTr KeyNumTs];
+%     KeyMatched =SumMatch;
+%     Accuracy=Corrtmp;
+    Time=time;
+end
